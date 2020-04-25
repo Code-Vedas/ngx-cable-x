@@ -1,8 +1,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/eaa2e2d869c6dc1f6971/maintainability)](https://codeclimate.com/github/Code-Vedas/ngx-cable-x/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/Code-Vedas/ngx-cable-x/badge.svg?branch=master)](https://coveralls.io/github/Code-Vedas/ngx-cable-x?branch=master)
 [![Build Status](https://travis-ci.com/Code-Vedas/ngx-cable-x.svg?branch=master)](https://travis-ci.com/Code-Vedas/ngx-cable-x)
-[![npm](https://img.shields.io/npm/dw/ngx-cable-x)](https://www.npmjs.com/package/ngx-cable-x)
-[![npm](https://img.shields.io/npm/v/ngx-cable-x)](https://www.npmjs.com/package/ngx-cable-x)
+[![npm](https://img.shields.io/npm/dw/ngx-cable-x?color=green&logoColor=green)](https://www.npmjs.com/package/ngx-cable-x)
+[![npm](https://img.shields.io/npm/v/ngx-cable-x?color=green&logoColor=green)](https://www.npmjs.com/package/ngx-cable-x)
 
 # NgxCableX
 
