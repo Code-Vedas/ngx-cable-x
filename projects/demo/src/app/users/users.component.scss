@@ -1,0 +1,18 @@
+div.container {
+  padding-top: 40px;
+  width: calc(80%);
+  min-width: 400px;
+  margin: 0 auto;
+
+  table {
+    width: 100%;
+    min-width: 400px;
+    // border: solid 1px #000000;
+    margin: 0 auto;
+
+    td {
+      // border: solid 1px #000000;
+      text-align: center;
+    }
+  }
+}

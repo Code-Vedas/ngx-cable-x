@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 *ngIf="!user">New User</h2>
+  <h2 *ngIf="user">Edit User</h2>
+  <form [formGroup]="userAddUpdateForm" (ngSubmit)="onSubmit(userAddUpdateForm.value)">
+    <div>
+      <label for="first_name">First Name</label>
+      <input id="first_name" formControlName="first_name" />
+    </div>
+    <div>
+      <label for="last_name">Last Name</label>
+      <input id="last_name" formControlName="last_name" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" />
+    </div>
+    <div>
+      <span>&nbsp;</span>
+      <button type="submit" [disabled]="userAddUpdateForm.invalid">Save</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,4 @@
+<div class="container">
+  <a href="#" [routerLink]="['/users']">Back</a>
+  <dm-user-new *ngIf="user" (onSave)="getUser()" [user]="user"></dm-user-new>
+</div>

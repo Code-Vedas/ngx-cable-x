@@ -1,0 +1,36 @@
+:host {
+  width: 100%;
+  min-width: 400px;
+  margin: 0 auto;
+
+}
+
+div.container {
+  padding-top: 40px;
+  width: 100%;
+  min-width: 400px;
+  margin: 0 auto;
+
+  div {
+    margin-bottom: 10px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 250px;
+  }
+}
