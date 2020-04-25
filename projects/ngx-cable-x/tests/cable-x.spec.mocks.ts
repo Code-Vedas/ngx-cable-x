@@ -5,29 +5,32 @@ export const getMockServer = () => {
   mockServer.on('connection', (socket) => {
     socket.send(JSON.stringify({ type: 'welcome' }));
     socket.on('message', (data: any) => {
-      const jsonData = JSON.parse(data);
-      if (jsonData.command === 'subscribe') {
-        socket.send(
-          JSON.stringify({
-            type: 'confirm_subscription',
-            identifier: jsonData.identifier,
-          })
-        );
-      } else if (jsonData.command === 'message') {
-        const responseData = JSON.parse(jsonData.data);
-        if (responseData.action === 'cmd') {
-          if (responseData.path === '/timeout') {
-            setTimeout(() => {
-              sendMessage(socket, jsonData, responseData);
-            }, 4000);
-          } else {
-            sendMessage(socket, jsonData, responseData);
-          }
-        }
-      }
+      process(socket, data);
     });
   });
   return mockServer;
+};
+const process = (socket, data) => {
+  const jsonData = JSON.parse(data);
+  if (jsonData.command === 'subscribe') {
+    socket.send(
+      JSON.stringify({
+        type: 'confirm_subscription',
+        identifier: jsonData.identifier,
+      })
+    );
+  } else if (jsonData.command === 'message') {
+    const responseData = JSON.parse(jsonData.data);
+    if (responseData.action === 'cmd') {
+      if (responseData.path === '/timeout') {
+        setTimeout(() => {
+          sendMessage(socket, jsonData, responseData);
+        }, 4000);
+      } else {
+        sendMessage(socket, jsonData, responseData);
+      }
+    }
+  }
 };
 const sendMessage = (socket, jsonData, data) => {
   socket.send(

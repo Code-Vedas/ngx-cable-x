@@ -15,6 +15,7 @@ ratings:
   - "**.ts"
 exclude_paths:
 - projects/demo
+- "**conf.js"
 ratings:
    paths:
    - "projects/ngx-cable-x/**/*"
