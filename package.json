@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test --code-coverage=true --watch=false --project 'ngx-cable-x'",
     "test-headless": "ng test --code-coverage=true --watch=false --no-progress --project 'ngx-cable-x' --browsers=ChromeHeadless && cat ./coverage/ngx-cable-x/lcov.info | coveralls",
     "lint": "ng lint --project 'ngx-cable-x'"
