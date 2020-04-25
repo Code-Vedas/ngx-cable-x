@@ -9,6 +9,14 @@
     "test-headless": "ng test --code-coverage=true --watch=false --no-progress --project 'ngx-cable-x' --browsers=ChromeHeadless && cat ./coverage/ngx-cable-x/lcov.info | coveralls",
     "lint": "ng lint --project 'ngx-cable-x'"
   },
+  "author": "Nitesh Purohit",
+  "keywords": [
+    "websocket",
+    "action cable",
+    "cablex",
+    "rails action cable angular"
+  ],
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.1",
