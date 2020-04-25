@@ -13,7 +13,7 @@ jobs:
           node-version: 13
           registry-url: https://registry.npmjs.org/
       - run: npm install
-      - run: npm build --project 'ngx-cable-x'
+      - run: npm run build --project 'ngx-cable-x'
       - run: cd dist/ngx-cable-x && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
