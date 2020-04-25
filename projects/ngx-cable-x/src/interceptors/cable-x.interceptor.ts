@@ -19,15 +19,7 @@ export class CableXInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): any {
     if (this.cableXConfig.enable) {
-      if (!this.isValidUrl(this.cableXConfig.host)) {
-        throw new Error('CableXConfig has invalid host URL');
-      }
-      if (
-        this.cableXConfig.cablePath === undefined ||
-        this.cableXConfig.cablePath === null
-      ) {
-        throw new Error('CableXConfig has null cablePath');
-      }
+      this.checkConfig();
       return this.cableXWsService.handle(request).pipe(
         timeout(this.cableXConfig.timeout * 1000),
         catchError(() => {
@@ -40,7 +32,17 @@ export class CableXInterceptor implements HttpInterceptor {
       return next.handle(request);
     }
   }
-
+  checkConfig() {
+    if (!this.isValidUrl(this.cableXConfig.host)) {
+      throw new Error('CableXConfig has invalid host URL');
+    }
+    if (
+      this.cableXConfig.cablePath === undefined ||
+      this.cableXConfig.cablePath === null
+    ) {
+      throw new Error('CableXConfig has null cablePath');
+    }
+  }
   isValidUrl(url) {
     try {
       return new URL(url);

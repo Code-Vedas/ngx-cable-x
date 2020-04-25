@@ -1,4 +1,20 @@
-plugins:
-  rubocop:
+
+engines:
+  duplication:
     enabled: true
-    channel: tslint
+    config:
+      languages:
+        javascript:
+          mass_threshold: 80
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.ts"
+exclude_paths:
+- projects/demo
+ratings:
+   paths:
+   - "projects/ngx-cable-x/**/*"

@@ -81,10 +81,11 @@ export class CableXWsService {
     const eventEmitterObjectIndex = this.eventEmitters.findIndex(
       (obj) => obj.request_id === receivedData.request_id
     );
-    const eventEmitterObject = this.eventEmitters.splice(
-      eventEmitterObjectIndex
-    )[0];
-    if (eventEmitterObject) {
+    /* istanbul ignore else  */
+    if (eventEmitterObjectIndex >= 0) {
+      const eventEmitterObject = this.eventEmitters.splice(
+        eventEmitterObjectIndex
+      )[0];
       eventEmitterObject.eventEmitter.emit(receivedData);
     }
   }
