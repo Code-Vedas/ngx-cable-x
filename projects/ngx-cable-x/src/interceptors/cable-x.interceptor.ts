@@ -27,7 +27,7 @@ export class CableXInterceptor implements HttpInterceptor {
         map((response: CableXResponse) => {
           return new HttpResponse({
             body: response.body,
-            headers: <any>response.headers,
+            headers: response.headers as any,
             status: response.status,
           });
         })
