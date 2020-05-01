@@ -1,6 +1,6 @@
 {
   "name": "ngx-cable-x",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "peerDependencies": {
     "@angular/common": "^9.1.1",
     "@angular/core": "^9.1.1",
