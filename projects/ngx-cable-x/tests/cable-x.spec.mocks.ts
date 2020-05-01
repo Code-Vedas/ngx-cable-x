@@ -33,19 +33,18 @@ const process = (socket, data) => {
   }
 };
 const sendMessage = (socket, jsonData, data) => {
-  socket.send(
-    JSON.stringify({
-      identifier: jsonData.identifier,
-      message: {
-        request_id: data.request_id,
-        body: JSON.stringify({
-          message: 'HELLO',
-          data: data.data,
-          params: data.params,
-        }),
-        code: 200,
-        headers: {},
-      },
-    })
-  );
+  const dataToSend = JSON.stringify({
+    identifier: jsonData.identifier,
+    message: {
+      request_id: data.request_id,
+      body: JSON.stringify({
+        message: 'HELLO',
+        data: data.data,
+        params: data.params,
+      }),
+      code: 200,
+      headers: {},
+    },
+  });
+  socket.send(dataToSend);
 };

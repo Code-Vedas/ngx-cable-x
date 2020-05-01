@@ -1,9 +1,8 @@
-import { timeout, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { CableXInterceptor } from '../src/interceptors/cable-x.interceptor';
 import { getMockServer } from './cable-x.spec.mocks';
 import { WebSocket as MockWebSocket } from 'mock-socket';
 import { TestBed } from '@angular/core/testing';
-import { CableXWsService } from '../src/services/cable-x-ws.service';
 import { CableXModule } from '../src/public-api';
 import * as ActionCable from 'actioncable';
 import {
@@ -15,7 +14,6 @@ import { of } from 'rxjs';
 let mockServer;
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 describe('CableXInterceptorInvalidCablePath', () => {
-  let service: CableXWsService;
   let interceptor: CableXInterceptor;
   let httpClient: HttpClient;
   beforeAll(() => {
@@ -39,13 +37,11 @@ describe('CableXInterceptorInvalidCablePath', () => {
         },
       ],
     });
-    service = TestBed.inject(CableXWsService);
     interceptor = TestBed.inject(CableXInterceptor);
     httpClient = TestBed.inject(HttpClient);
     ActionCable.WebSocket = MockWebSocket;
   });
   afterAll(() => {
-    service.stop();
     mockServer.stop();
   });
   it('should be created', () => {

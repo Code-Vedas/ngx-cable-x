@@ -28,9 +28,9 @@
     "@angular/platform-browser-dynamic": "~9.1.1",
     "@angular/router": "~9.1.1",
     "actioncable": "~5.2.4-2",
+    "cable-x-js": "^0.1.6",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "uuid": "^7.0.3",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

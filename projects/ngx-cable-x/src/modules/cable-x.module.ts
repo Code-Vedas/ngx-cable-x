@@ -1,10 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import {
-  CableXConfig,
+  NgCableXConfig,
   DataConfigService,
   CABLE_X_DEFAULT_CONFIG,
 } from '../config';
-import { CableXWsService } from '../services/cable-x-ws.service';
 import { CableXInterceptor } from '../interceptors/cable-x.interceptor';
 
 @NgModule({
@@ -13,11 +12,10 @@ import { CableXInterceptor } from '../interceptors/cable-x.interceptor';
   exports: [],
 })
 export class CableXModule {
-  static forRoot(config?: CableXConfig): ModuleWithProviders<CableXModule> {
+  static forRoot(config?: NgCableXConfig): ModuleWithProviders<CableXModule> {
     return {
       ngModule: CableXModule,
       providers: [
-        CableXWsService,
         CableXInterceptor,
         {
           provide: DataConfigService,

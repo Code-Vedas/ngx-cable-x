@@ -3,29 +3,33 @@ import {
   HttpInterceptor,
   HttpRequest,
   HttpHandler,
+  HttpResponse,
 } from '@angular/common/http';
-import { catchError, timeout } from 'rxjs/operators';
-import { DataConfigService, CableXConfig } from '../config';
-import { CableXWsService } from '../services/cable-x-ws.service';
-
+import { map } from 'rxjs/operators';
+import { DataConfigService, NgCableXConfig } from '../config';
+import { cablexConfigure, cablex, CableXResponse } from 'cable-x-js';
 @Injectable({
   providedIn: 'root',
 })
 export class CableXInterceptor implements HttpInterceptor {
   constructor(
-    @Inject(DataConfigService) private cableXConfig: CableXConfig,
-    private cableXWsService: CableXWsService
+    @Inject(DataConfigService) private cableXConfig: NgCableXConfig
   ) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): any {
     if (this.cableXConfig.enable) {
       this.checkConfig();
-      return this.cableXWsService.handle(request).pipe(
-        timeout(this.cableXConfig.timeout * 1000),
-        catchError(() => {
-          throw new Error(
-            `Timeout waiting for response, CableX waited for atleast ${this.cableXConfig.timeout} seconds`
-          );
+      const dataToSend = this.getDataToSend({ request });
+      return cablex(dataToSend.method, dataToSend.path, {
+        body: dataToSend.data,
+        params: dataToSend.params,
+      }).pipe(
+        map((response: CableXResponse) => {
+          return new HttpResponse({
+            body: response.body,
+            headers: <any>response.headers,
+            status: response.status,
+          });
         })
       );
     } else {
@@ -42,6 +46,11 @@ export class CableXInterceptor implements HttpInterceptor {
     ) {
       throw new Error('CableXConfig has null cablePath');
     }
+    cablexConfigure({
+      cablePath: this.cableXConfig.cablePath,
+      host: this.cableXConfig.host,
+      timeout: this.cableXConfig.timeout,
+    });
   }
   isValidUrl(url) {
     try {
@@ -49,5 +58,17 @@ export class CableXInterceptor implements HttpInterceptor {
     } catch (_) {
       return false;
     }
+  }
+  getDataToSend({ request }) {
+    const path = this.getPathFromUrl(request.url);
+    return {
+      method: request.method,
+      path,
+      data: request.body,
+      params: request.params,
+    };
+  }
+  getPathFromUrl(url) {
+    return `/${url.split('//')[1].split('/').splice(1).join('/')}`;
   }
 }
