@@ -5,7 +5,8 @@
     "@angular/common": "^9.1.1",
     "@angular/core": "^9.1.1",
     "tslib": "^1.10.0",
-    "actioncable": "~5.2.4-2"
+    "actioncable": "~5.2.4-2",
+    "cable-x-js": "latest"
   },
   "author": "Nitesh Purohit",
   "keywords": [
@@ -17,6 +18,10 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Code-Vedas/ngx-cable-x/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Code-Vedas/ngx-cable-x.git"
   },
   "homepage": "https://github.com/Code-Vedas/ngx-cable-x#readme"
 }

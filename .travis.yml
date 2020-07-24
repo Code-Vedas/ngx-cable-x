@@ -12,3 +12,12 @@ script:
   - npm run lint
   - npm run test-headless
   - npm run build --project 'ngx-cable-x'
+jobs:
+  include:
+    - stage: release
+      node_js: "14"
+      script: ./deploy.sh
+stages:
+  - test
+  - name: release
+    if: branch = master
