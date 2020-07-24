@@ -1,6 +1,6 @@
 {
   "name": "ngx-cable-x",
-  "version": "0.1.3",
+  "version": "0.3.0",
   "peerDependencies": {
     "@angular/common": "~10.0.5",
     "@angular/core": "~10.0.5",
@@ -25,5 +25,13 @@
   "homepage": "https://github.com/Code-Vedas/ngx-cable-x#readme",
   "dependencies": {
     "tslib": "^2.0.0"
-  }
+  },
+  "main": "bundles/ngx-cable-x.umd.js",
+  "module": "fesm2015/ngx-cable-x.js",
+  "es2015": "fesm2015/ngx-cable-x.js",
+  "esm2015": "esm2015/ngx-cable-x.js",
+  "fesm2015": "fesm2015/ngx-cable-x.js",
+  "typings": "ngx-cable-x.d.ts",
+  "metadata": "ngx-cable-x.metadata.json",
+  "sideEffects": false
 }
