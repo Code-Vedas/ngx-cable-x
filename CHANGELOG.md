@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/Code-Vedas/ngx-cable-x/compare/v0.3.0...v0.3.1) (2020-07-24)
+
+
+### Bug Fixes
+
+* **dependencies:** actioncable from 5.2.4-2 to 5.2.4-3 ([9a7f263](https://github.com/Code-Vedas/ngx-cable-x/commit/9a7f263289430a0b26d579ec3ecde8b0430e436b))
+* **dependencies:** jasmine-core from 3.5.0 to 3.6.0 ([8d53061](https://github.com/Code-Vedas/ngx-cable-x/commit/8d530616ff65f5c18c913d8023f7bf74834475eb))
+* **dependencies:** ts-node from 8.3.0 to 8.10.2 ([a643e12](https://github.com/Code-Vedas/ngx-cable-x/commit/a643e120ee68d1aeb3fe559f24c8a218548c61fe))
+
 # [0.3.0](https://github.com/Code-Vedas/ngx-cable-x/compare/v0.2.0...v0.3.0) (2020-07-24)
 
 
