@@ -138,7 +138,7 @@
         "path": "@semantic-release/git",
         "assets": [
           "CHANGELOG.md",
-          "projects/dist/ngx-cable-x/package.json"
+          "projects/ngx-cable-x/package.json"
         ],
         "message": "build(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
