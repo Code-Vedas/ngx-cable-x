@@ -2,9 +2,8 @@
   "name": "ngx-cable-x",
   "version": "0.1.3",
   "peerDependencies": {
-    "@angular/common": "^9.1.1",
-    "@angular/core": "^9.1.1",
-    "tslib": "^1.10.0",
+    "@angular/common": "~10.0.5",
+    "@angular/core": "~10.0.5",
     "actioncable": "~5.2.4-2",
     "cable-x-js": "latest"
   },
@@ -23,5 +22,8 @@
     "type": "git",
     "url": "https://github.com/Code-Vedas/ngx-cable-x.git"
   },
-  "homepage": "https://github.com/Code-Vedas/ngx-cable-x#readme"
+  "homepage": "https://github.com/Code-Vedas/ngx-cable-x#readme",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
 }
