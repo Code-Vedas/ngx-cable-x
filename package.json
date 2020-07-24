@@ -40,7 +40,7 @@
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.0.7",
-    "actioncable": "~5.2.4-2",
+    "actioncable": "~5.2.4-3",
     "cable-x-js": "latest",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
