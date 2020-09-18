@@ -43,7 +43,7 @@
     "actioncable": "~5.2.4-3",
     "cable-x-js": "latest",
     "husky": "^4.3.0",
-    "lint-staged": "^10.3.0",
+    "lint-staged": "^10.4.0",
     "rxjs": "~6.5.4",
     "semantic-release": "^17.1.1",
     "tslib": "^2.0.1",
