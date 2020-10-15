@@ -1,3 +1,10 @@
+## [0.3.2](https://github.com/Code-Vedas/ngx-cable-x/compare/v0.3.1...v0.3.2) (2020-10-15)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([#90](https://github.com/Code-Vedas/ngx-cable-x/issues/90)) ([ff61481](https://github.com/Code-Vedas/ngx-cable-x/commit/ff61481ba8780387f4dd57c6053ccfe30c4c705e))
+
 ## [0.3.1](https://github.com/Code-Vedas/ngx-cable-x/compare/v0.3.0...v0.3.1) (2020-07-24)
 
 
